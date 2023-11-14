@@ -1,0 +1,201 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.header a img {
+    margin-left: 3px;
+    width: 50px;
+    height: 50px;
+}
+
+.header a {
+    padding: 5px;
+    border-radius: 100%;
+    background-color: #ccc;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.header a:hover {
+    cursor: pointer;
+    background-color: #555;
+}
+
+.header h1 {
+    width: 90%;
+}
+
+.home {
+    width: 100%;
+    font-size: 1.7rem;
+}
+
+.home-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.btnHome {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 0px 30px;
+    background-color: #ccc;
+    border-radius: 2rem;
+}
+
+.btnHome:hover {
+    cursor: pointer;
+    background-color: rgb(228, 191, 154);
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.container {
+    margin: 10px 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #ff7300;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.structureContainer {
+    min-width: 600px;
+    max-height: 1000px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    position: relative;
+}
+
+#structure {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50px;
+    top: 100px;
+}
+
+.position {
+    width: 120px;
+    height: 60px;
+    border: solid black 1px;
+    text-align: center;
+}
+
+.tray {
+    display: flex;
+    flex-direction: column;
+}
+
+.positionContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.blockSeparator {
+    width: 100%;
+    height: 18px;
+    background-color: #ff7300;
+}
+
+#indexStructure {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 50px;
+    top: 100px;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.block h3 {
+    margin: 0px 20px 0px 0px;
+}
+
+.records {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid black 2px;
+}
+
+.record {
+    border: solid black 1px;
+}
+
+.recordData {
+    display: flex;
+}
+
+.positionContainer h3 {
+    width: 30px;
+}
+
+.position h3 {
+    width: auto;
+}
+

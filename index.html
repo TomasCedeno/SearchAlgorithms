@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busquedas Internas y Externas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="header">
+        <a href="/">
+            <img src="./assets/home.png" alt="inicio">
+        </a>
+        <h1 id="title">Sistema de Información</h1>
+    </div>
+
+    <div class="home" id="home">
+        <h2>Seleccione el tipo de búsqueda</h2>
+
+        <div class="home-buttons">
+            <div class="btnHome" id="btnInternal">
+                <img src="./assets/internal.png" alt="Busquedas Internas">
+                <h4>Búsquedas Internas</h4>
+            </div>
+            <div class="btnHome" id="btnExternal">
+                <img src="./assets/external.png" alt="Busquedas Internas">
+                <h4>Búsquedas Externas</h4>
+            </div>
+            <div class="btnHome" id="btnIndices">
+                <img src="./assets/indices.png" alt="Busquedas Internas">
+                <h4>Indices</h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" class="content" style="display: none;">
+        <div class="container">
+            <h2>Crear Estructura</h2>
+
+            <div id="internalForm" style="display: none;">
+                <label for="algorithmSelect">Seleccionar algoritmo de búsqueda</label>
+                <select id="algorithmSelect">
+                    <option value="sequential">Secuencial</option>
+                    <option value="binary">Binaria</option>
+                    <option value="hashMod">Hash Mod</option>
+                    <option value="hashSquare">Hash Cuadrado</option>
+                    <option value="hashTrunc">Hash Truncamiento</option>
+                    <option value="hashFolding">Hash Plegamieto</option>
+                </select>
+
+                <label id="lblCollisionSelect" for="collisionSelect" style="display: none;">Seleccionar solucionador de colisiones</label>
+                <select id="collisionSelect" style="display: none;">
+                    <option value="linear">Lineal</option>
+                    <option value="square">Cuadratica</option>
+                    <option value="hash">Función Hash</option>
+                    <option value="nestedArrays">Arreglos Anidados</option>
+                    <option value="linkedLists">Listas Enlazadas</option>
+                </select>
+
+                <label for="rangeInput">Ingrese el rango</label>
+                <input id="rangeInput" type="number" min="0">
+            </div>
+
+            
+            <div id="externalForm" style="display: none;">
+                <label for="externalAlgorithmSelect">Seleccionar algoritmo de búsqueda</label>
+                <select id="externalAlgorithmSelect">
+                    <option value="sequential">Secuencial</option>
+                    <option value="binary">Binaria</option>
+                    <option value="totalExpansion">Expansión Total</option>
+                    <option value="partialExpansion">Expansión Parcial</option>
+                    <option value="indices">Busqueda Secuencial con Indices</option>
+                </select>
+
+                <label id="lblExternalHashFunction" for="externalHashFunction" style="display: none;">Seleccionar algoritmo de búsqueda</label>
+                <select id="externalHashFunction" style="display: none;">
+                    <option value="hashMod">Hash Mod</option>
+                    <option value="hashSquare">Hash Cuadrado</option>
+                    <option value="hashTrunc">Hash Truncamiento</option>
+                    <option value="hashFolding">Hash Plegamieto</option>
+                </select>
+
+                <label for="externalRangeInput" id="lblExternalRangeInput">Ingrese el rango</label>
+                <input id="externalRangeInput" type="number" min="0">
+
+                <label for="externalNumRegisterInput" id="lblExternalNumRegisterInput" style="display: none;">Ingrese el número de registros por cubeta</label>
+                <input id="externalNumRegisterInput" type="number" min="0" style="display: none;">
+            </div>
+
+            <label for="numDigits">Ingrese la cantidad de digitos de las claves</label>
+            <input id="numDigits" type="number" min="0">
+
+            <button type="button" id="btnCreateStructure">Crear Estructura</button>
+        </div>  
+
+        <div class="container">
+            <h2>Insertar y Buscar Clave</h2>
+
+            <label for="insertInput">Clave</label>
+            <input id="insertInput" type="text" min="0">
+            <input id="nameInput" type="text" placeholder="Nombre" maxlength="15" autocomplete="off" style="display: none;">
+            <input id="lastNameInput" type="text" placeholder="Apellido" maxlength="15" autocomplete="off" style="display: none;">
+            <button type="button" id="btnInsert">Insertar Clave</button>
+
+            
+            <label for="searchInput">Clave a buscar</label>
+            <input id="searchInput" type="text" min="0">
+            <button type="button" id="btnSearch">Buscar Clave</button>
+            <button type="button" id="btnDelete">Eliminar Clave</button>
+        </div>
+
+        <div class="container structureContainer">
+            <h2>Estructura</h2>
+
+            <div id="structure"></div>
+        </div>
+    </div>
+
+
+    <div id="indices" style="display: none;">
+        <div class="container">
+            <h2>Crear Estructura</h2>
+
+            <div id="internalForm">
+                <label for="indexTypeSelect">Seleccionar tipo de indices</label>
+                <select id="indexTypeSelect">
+                    <option value="primary">Indices primarios</option>
+                    <option value="secondary">Indices secundarios</option>
+                    <!-- <option value="multilevelOnPrimary">Indices multinivel sobre primarios</option>
+                    <option value="multilevelOnSecondary">Indices multinivel sobre secundarios</option> -->
+                </select>
+
+                <label for="recordsInput">Ingrese la cantidad de registros del archivo</label>
+                <input id="recordsInput" type="number" min="0" placeholder="ej. 250000">
+
+                <label for="recordLengthInput">Ingrese la longitud del registro en bytes</label>
+                <input id="recordLengthInput" type="number" min="0" placeholder="ej. 150 bytes">
+
+                <label for="indexLengthInput">Ingrese la longitud del registro indice en bytes</label>
+                <input id="indexLengthInput" type="number" min="0" placeholder="ej. 15 bytes">
+                
+                <label for="blockCapacityInput">Ingrese la capacidad de bloque del disco duro en bytes</label>
+                <input id="blockCapacityInput" type="number" min="0" placeholder="ej. 8192 bytes">
+
+                <button type="button" id="btnCreateIndexStructure">Crear Estructura</button>
+            </div>
+        </div>
+
+        <div class="container structureContainer">
+            <h2>Estructura</h2>
+
+            <div id="indexStructure"></div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
