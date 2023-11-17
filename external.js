@@ -69,6 +69,8 @@ const createStructure = () => {
         let expansionOD = Number(prompt("Ingrese la densidad de ocupación para expansión (ej. 75): ")) / 100
         let reductionOD = Number(prompt("Ingrese la densidad de ocupación para reducción (ej. 120): ")) / 100
 
+        //AQUI SE PUEDE IMPLEMENTAR LAS RESTRICCIONES DE LOS PORCENTAJES
+
         if (algorithm == "totalExpansion"){
             structure = new ExpandableStructure(hashFunction, range, numRegister, "total", expansionOD, reductionOD)
             structureDimension = 2

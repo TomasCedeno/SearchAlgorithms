@@ -159,11 +159,12 @@ button {
 #indexStructure {
     display: flex;
     flex-direction: row;
-    position: absolute;
-    left: 50px;
-    top: 100px;
-    justify-content: space-around;
+    /* position: absolute;
+    left: 250px;
+    top: 100px; */
+    /* justify-content: space-around; */
     width: 100%;
+    gap: 60px;
 }
 
 .block {
@@ -197,5 +198,11 @@ button {
 
 .position h3 {
     width: auto;
+}
+
+#multilevelIndices {
+    display: flex;
+    gap: 40px;
+    margin-right: 50px;
 }
 
