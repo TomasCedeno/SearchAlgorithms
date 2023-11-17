@@ -100,13 +100,7 @@ class ExternalBinarySearch {
     }
 
     search(key) {
-        let position = this.array.indexOf(key)
-
-        if (position != -1){
-            alert(`Se encontró la clave ${key} en el bloque ${Math.floor(position/this.blockSize) + 1}`);
-        }
-
-        return position
+        return this.array.indexOf(key)
     }
 
     delete(key) {
@@ -119,6 +113,46 @@ class ExternalBinarySearch {
         } else{
             alert(`No se encontró la clave ${key} en la estructura.`);
         }
+    }
+
+    
+    async interactiveSearch(key){
+        const structure = document.getElementById("structure")
+
+        for (let i=this.blockSize-1; i<this.array.length+Math.floor(this.range/this.blockSize); i+=this.blockSize+1){
+            const position = structure.childNodes[i].childNodes[1]
+            await selectPosition(position)
+            position.style.border = "solid black 1px"
+
+
+            if (key <= this.array[Number(structure.childNodes[i].firstChild.innerHTML)-1]){
+                let left = 0;
+                let right = Number(structure.childNodes[i].firstChild.innerHTML)-1;
+
+                while (left <= right) {
+                    const middle = Math.floor((left + right) / 2);
+                    const middleValue = this.array[middle];
+
+                    const position = structure.childNodes[middle].childNodes[1]
+                    await selectPosition(position)
+
+                    if (middleValue == key) {
+                        alert(`Se encontró la clave ${key} en el bloque ${Math.floor(this.array.indexOf(key)/this.blockSize) + 1}`);
+                        return
+                    } else if (middleValue < key) {
+                        left = middle + 1; // El elemento está a la derecha de la mitad
+                    } else {
+                        right = middle - 1; // El elemento está a la izquierda de la mitad
+                    }
+
+                    position.style.border = "solid black 1px"
+                }
+
+                return
+            }
+        }
+
+        return -1;
     }
 
 }
